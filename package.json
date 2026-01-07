@@ -1,0 +1,21 @@
+{
+  "name": "financial-elite-simulator",
+  "version": "1.0.0",
+  "description": "金融精英模拟器 - 一个有趣的职业模拟游戏",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo '打开 index.html 开始游戏'",
+    "deploy": "vercel"
+  },
+  "keywords": [
+    "game",
+    "simulation",
+    "financial",
+    "career"
+  ],
+  "author": "周游",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}
