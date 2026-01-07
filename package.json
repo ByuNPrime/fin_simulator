@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "echo '打开 index.html 开始游戏'",
+    "build": "echo '静态网站无需构建'",
     "deploy": "vercel"
   },
   "keywords": [
