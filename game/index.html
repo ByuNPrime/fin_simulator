@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金融精英模拟器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 游戏主界面 -->
+    <div id="game-container">
+        <!-- 头部：游戏标题和基本信息 -->
+        <header id="game-header">
+            <h1>金融精英模拟器</h1>
+            <div id="game-info">
+                <span id="career-level">职级: Analyst</span>
+                <span id="game-time">2020年1月</span>
+                <span id="action-points">本月可行动</span>
+                <span id="career-length">入行0年0个月</span>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main id="game-main">
+            <!-- 左侧：核心数值仪表盘 -->
+            <section id="stats-dashboard">
+                <h2>核心指标</h2>
+                <div class="stats-grid">
+                    <!-- 精力储备 -->
+                    <div class="stat-card">
+                        <div class="stat-label">精力储备</div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" id="stat-energy">
+                                <span class="stat-value" id="value-energy">90</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 职业声誉 -->
+                    <div class="stat-card">
+                        <div class="stat-label">职业声誉</div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" id="stat-reputation">
+                                <span class="stat-value" id="value-reputation">70</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 高层关系 -->
+                    <div class="stat-card">
+                        <div class="stat-label">高层关系</div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" id="stat-executive">
+                                <span class="stat-value" id="value-executive">30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 业内人脉 -->
+                    <div class="stat-card">
+                        <div class="stat-label">业内人脉</div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" id="stat-network">
+                                <span class="stat-value" id="value-network">50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 专业能力 -->
+                    <div class="stat-card">
+                        <div class="stat-label">专业能力</div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" id="stat-ability">
+                                <span class="stat-value" id="value-ability">40</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 团队士气 -->
+                    <div class="stat-card">
+                        <div class="stat-label">团队士气</div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" id="stat-teamMorale">
+                                <span class="stat-value" id="value-teamMorale">60</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 业绩表现 -->
+                    <div class="stat-card">
+                        <div class="stat-label">业绩表现</div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" id="stat-performance">
+                                <span class="stat-value" id="value-performance">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 风险指数 -->
+                    <div class="stat-card">
+                        <div class="stat-label">风险指数</div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar risk-bar" id="stat-risk">
+                                <span class="stat-value" id="value-risk">5%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 个人资产 -->
+                    <div class="stat-card">
+                        <div class="stat-label">个人资产</div>
+                        <div class="stat-value-text" id="value-money">¥500,000</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 右侧：行动面板 -->
+            <section id="action-panel">
+                <h2>本月行动</h2>
+                <div id="actions-list">
+                    <!-- 行动按钮将通过JavaScript动态生成 -->
+                </div>
+                <button id="end-month-btn" class="btn-primary">
+                    按部就班
+                    <span style="font-size: 0.85em; font-weight: normal; display: block; margin-top: 4px;">
+                        不做特别行动，正常工作进入下个月
+                    </span>
+                </button>
+            </section>
+        </main>
+
+        <!-- 游戏日志 -->
+        <section id="game-log">
+            <h3>📜 社畜日记</h3>
+            <div id="log-content">
+                <p class="log-entry">欢迎来到金融精英模拟器！</p>
+                <p class="log-entry">（在这里体验什么叫"人上人"的代价）</p>
+                <p class="log-entry">你刚刚入职成为一名初级分析师(Analyst)。</p>
+                <p class="log-entry">（恭喜你，正式成为韭菜）</p>
+                <p class="log-entry">当前时间：2020年1月</p>
+                <p class="log-entry">（从社畜开始你的旅程）</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 事件弹窗 -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="event-title">事件标题</h2>
+            <p id="event-description">事件描述内容...</p>
+            <div id="event-choices">
+                <!-- 选择按钮将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 结局弹窗 -->
+    <div id="ending-modal" class="modal">
+        <div class="modal-content ending-content">
+            <h2 id="ending-title">游戏结束</h2>
+            <div id="ending-description"></div>
+            <div id="ending-stats"></div>
+            <button id="restart-btn" class="btn-primary">重新开始</button>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript -->
+    <script src="game.js"></script>
+</body>
+</html>

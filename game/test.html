@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏测试页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a2e;
+            color: white;
+        }
+        .test-info {
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #c7364d;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h1>游戏测试页面</h1>
+        <p>如果你能看到这个页面，说明HTML文件加载成功。</p>
+
+        <h2>测试JavaScript是否加载：</h2>
+        <button onclick="testJS()">点击测试JavaScript</button>
+        <div id="js-test-result"></div>
+
+        <h2>测试game.js是否加载：</h2>
+        <button onclick="testGameJS()">点击测试game.js</button>
+        <div id="game-test-result"></div>
+
+        <h2>开始游戏：</h2>
+        <button onclick="startGame()">开始游戏</button>
+    </div>
+
+    <script>
+        function testJS() {
+            document.getElementById('js-test-result').innerHTML =
+                '<p style="color: #4CAF50;">✓ JavaScript工作正常！</p>';
+        }
+
+        function testGameJS() {
+            if (typeof CONFIG !== 'undefined') {
+                document.getElementById('game-test-result').innerHTML =
+                    '<p style="color: #4CAF50;">✓ game.js加载成功！</p>';
+            } else {
+                document.getElementById('game-test-result').innerHTML =
+                    '<p style="color: #f44336;">✗ game.js未加载！</p>';
+            }
+        }
+
+        function startGame() {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+    <script src="game.js"></script>
+</body>
+</html>
